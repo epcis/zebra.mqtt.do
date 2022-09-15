@@ -1,27 +1,27 @@
-const api = {
-  icon: '⚡️☁️',
-  name: 'zebra.rfid.connects.to',
-  description: 'Zebra IOT Connector to Cloud API',
-  url: 'zebra.rfid.connects.to/api',
-  type: 'https://apis.do/iot',
-  endpoints: {
-    getTenant: 'https://zebra.rfid.connects.to/:tenant',
-    allReaders: 'https://zebra.rfid.connects.to/:tenant/readers',
-    allReads: 'https://zebra.rfid.connects.to/:tenant/reads',
-    enrollReader: 'https://zebra.rfid.connects.to/:tenant/new',
-    getReader: 'https://zebra.rfid.connects.to/:tenant/:readerId',
-    getReadsForReader: 'https://zebra.rfid.connects.to/:tenant/:readerId',
-  },
-  site: 'https://zebra.rfid.connects.to',
-  login: 'https://zebra.rfid.connects.to/login',
-  signup: 'https://zebra.rfid.connects.to/signup',
-  repo: 'https://github.com/epcis/zebra-iot-connect',
-}
-
 export default {
   fetch: async (req, env) => {
-    const { user, body, url, ts, time, headers, cf } = await env.CTX.fetch(req).then(res => res.json())
-    const { origin, hostname, pathname } = new URL(req.url)
+    const { user, origin, hostname, pathnam, body, url, ts, time, headers, cf } = await env.CTX.fetch(req).then(res => res.json())
+    
+    const api = {
+      icon: '⚡️☁️',
+      name: 'zebra.rfid.connects.to',
+      description: 'Zebra IOT Connector to Cloud API',
+      url: origin + '/api',
+      type: 'https://apis.do/iot',
+      endpoints: {
+        getTenant: origin + '/:tenant',
+        allReaders: origin + '/:tenant/readers',
+        allReads: origin + '/:tenant/reads',
+        enrollReader: origin + '/:tenant/new',
+        getReader: origin + '/:tenant/:readerId',
+        getReadsForReader: origin + '/:tenant/:readerId',
+      },
+      site: 'https://mqtt.do',
+      login: origin + '/login',
+      signup: origin + '/signup',
+      repo: 'https://github.com/epcis/zebra-iot-connect',
+    }
+    
     let [ _, namespace, id = headers['cf-ray'] ] = pathname.split('/')
     if (namespace.length != 36 || namespace == ':namespace') {
       namespace = crypto.randomUUID() 
