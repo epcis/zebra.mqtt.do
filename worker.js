@@ -1,6 +1,6 @@
 export default {
   fetch: async (req, env) => {
-    const { user, origin, hostname, pathnam, body, url, ts, time, headers, cf } = await env.CTX.fetch(req).then(res => res.json())
+    const { user, origin, hostname, pathnam, body, url, ts, time, location, headers, cf } = await env.CTX.fetch(req).then(res => res.json())
     
     const api = {
       icon: '⚡️☁️',
@@ -26,9 +26,6 @@ export default {
     if (namespace.length != 36 || namespace == ':namespace') {
       namespace = crypto.randomUUID() 
     }
-    const ua = headers['user-agent']
-    const { ip, isp, city, region, country, continent } = user
-    const location = `${city}, ${region}, ${country}, ${continent}`
     const list = `https://zebra.rfid.connects.to/${namespace}`
     const data = body ? await env.DB.put(`${namespace}/${id}`, JSON.stringify({ namespace, id, time, url, body, headers, cf, user }, null, 2) , { 
       metadata: { time, ip, ua, location, url: `https://zebra.rfid.connects.to/${namespace}/${id}` },
