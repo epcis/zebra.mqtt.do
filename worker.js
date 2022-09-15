@@ -4,7 +4,7 @@ export default {
     
     const api = {
       icon: '⚡️☁️',
-      name: 'zebra.rfid.connects.to',
+      name: 'zebra.mqtt.do',
       description: 'Zebra IOT Connector to Cloud API',
       url: origin + '/api',
       type: 'https://apis.do/iot',
