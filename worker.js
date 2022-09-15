@@ -1,6 +1,6 @@
 export default {
   fetch: async (req, env) => {
-    const { user, origin, hostname, pathnam, body, url, ts, time, location, headers, cf } = await env.CTX.fetch(req).then(res => res.json())
+    const { user, origin, hostname, pathname, body, url, ts, time, location, headers, cf } = await env.CTX.fetch(req).then(res => res.json())
     
     const api = {
       icon: '⚡️☁️',
