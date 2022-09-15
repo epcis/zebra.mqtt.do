@@ -1,4 +1,4 @@
-# Zebra IOT Connector
+# 🦓⚡️☁️  Zebra IOT Connector to Cloudflare
 Zebra IOT Connector to Cloudflare PubSub via MQTT
 
 <https://zebra.rfid.connects.to/api>
