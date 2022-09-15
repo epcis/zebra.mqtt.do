@@ -15,9 +15,6 @@ Zebra IOT Connector to Cloudflare PubSub via MQTT
       "list": "https://namespace.database.do/:resource",
       "search": "https://namespace.database.do/:resource?prop=value",
       "new": "https://namespace.database.do/:resource/new?prop=value",
-      "get": "https://namespace.database.do/:resource/:id",
-      "set": "https://namespace.database.do/:resource/:id/set?prop=value",
-      "delete": "https://namespace.database.do/:resource/:id/delete"
     },
     "site": "https://zebra.rfid.connects.to",
     "login": "https://zebra.rfid.connects.to/login",
