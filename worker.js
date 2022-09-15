@@ -30,9 +30,8 @@ export default {
     const { ip, isp, city, region, country, continent } = user
     const location = `${city}, ${region}, ${country}, ${continent}`
     const list = `https://zebra.rfid.connects.to/${namespace}`
-    const data = body ? await env.WEBHOOKS.put(`${namespace}/${id}`, JSON.stringify({ namespace, id, time, url, body, headers, cf, user }, null, 2) , { 
+    const data = body ? await env.DB.put(`${namespace}/${id}`, JSON.stringify({ namespace, id, time, url, body, headers, cf, user }, null, 2) , { 
       metadata: { time, ip, ua, location, url: `https://zebra.rfid.connects.to/${namespace}/${id}` },
-      expirationTtl: 30 * 24 * 60 * 60 ,
     }) : id != headers['cf-ray'] ? await env.DB.getWithMetadata(`${namespace}/${id}`, { type: "json" }) : await env.DB.list({ prefix: `${namespace}/`}).then(list => list.keys.map(item => item.metadata))
     return new Response(JSON.stringify({ api, namespace, ts, time, id, list, data, user }, null, 2), { headers: { 'content-type': 'application/json; charset=utf-8' }})
   }
