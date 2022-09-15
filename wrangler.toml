@@ -12,3 +12,26 @@ services = [
   binding = "DB"
   id = "2a97888decc147289e250e5ed7a5022b"
   preview_id = "f016eb4082e041458dbb346c360ef71e"
+
+[vars]
+BROKER_PUBLIC_KEYS = '''{
+{
+  keys: [
+    {
+      use: 'sig',
+      kty: 'OKP',
+      kid: '2-z7OZHSKZ17J5XIXUvJpXM2QH4tHNnH5Q3A7NJ4giQ',
+      crv: 'Ed25519',
+      alg: 'EdDSA',
+      x: 'VEjtOGDIqayG7SSjrEN2xwnCS5eQagtm0YqHVbbWXwI'
+    },
+    {
+      use: 'sig',
+      kty: 'OKP',
+      kid: 'dpy3z_cJ5ayFkiBr3OMDXIQhxOVZO5MEVPcwvehm0lA',
+      crv: 'Ed25519',
+      alg: 'EdDSA',
+      x: 'OgcesOmLg9C5UhfXaPzDHTJrLeclWmHstiY1D5AM_90'
+    }
+  ]
+}'''
