@@ -3,7 +3,7 @@ export default {
     const { user, origin, hostname, pathname, body, url, ts, time, location, headers, cf } = await env.CTX.fetch(req).then(res => res.json())
     
     const api = {
-      icon: '⚡️☁️',
+      icon: '🦓⚡️☁️',
       name: 'zebra.mqtt.do',
       description: 'Zebra IOT Connector to Cloud API',
       url: origin + '/api',
