@@ -52,3 +52,10 @@ Zebra IOT Connector to Cloudflare PubSub via MQTT
   }
 }
 ```
+
+## Getting Started
+
+Clone the repo, and create a `.env` file:
+```
+CF_TOKEN={YOUR_TOKEN}
+```
