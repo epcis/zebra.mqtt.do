@@ -1,0 +1,14 @@
+name = "iot-mqtt-do"
+account_id = "b6641681fe423910342b9ffa1364c76d"
+route = { pattern = "*/*", zone_id = "617a9d49ca466527762b5351799a516c" }
+main = "worker.js"
+compatibility_date = "2022-08-23"
+
+services = [
+  { binding = "CTX", service = "ctx-do", environment = "production" }
+]
+
+[[kv_namespaces]]
+  binding = "DB"
+  id = "2a97888decc147289e250e5ed7a5022b"
+  preview_id = "f016eb4082e041458dbb346c360ef71e"
