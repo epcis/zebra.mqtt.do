@@ -19,7 +19,7 @@ export default {
       site: 'https://mqtt.do',
       login: origin + '/login',
       signup: origin + '/signup',
-      repo: 'https://github.com/epcis/zebra-iot-connect',
+      repo: 'https://github.com/epcis/zebra.mqtt.do',
     }
     
     let [ _, namespace, id = headers['cf-ray'] ] = pathname.split('/')
