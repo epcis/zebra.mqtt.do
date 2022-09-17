@@ -55,7 +55,6 @@ Zebra IOT Connector to Cloudflare PubSub via MQTT
 
 ## Getting Started
 
-Clone the repo, and create a `.env` file:
-```
-CF_TOKEN={YOUR_TOKEN}
-```
+You can visit: <https://demo.mqtt.dev>
+
+Replace `broker.namespace` with `zebra.epcis` and enter your JWT token and use the `event/rfid/read` topic to get started.
